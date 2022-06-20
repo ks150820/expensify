@@ -7,7 +7,7 @@ import useHomeScreenViewController from "../home-screen-view-model";
 import { HomeProps } from "../../../Navigation/@types/navigation-types";
 
 type Props = {
-    onPress: any
+    onPress: any //dont write any
 }
 const Footer: React.FC<Props> = ({ onPress}) => {
     return (

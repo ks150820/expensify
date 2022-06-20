@@ -40,7 +40,8 @@ export const styles = StyleSheet.create({
     inputBox:{
         width:140,
         height:40,
-        borderBottomWidth:1
+        borderBottomWidth:1,
+        color:'black'
     },
     labelText:{
         fontSize:24,

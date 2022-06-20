@@ -1,4 +1,4 @@
-import { Picker } from '@react-native-picker/picker';
+
 import React, { useState } from 'react';
 import {View, Text, Pressable, TextInput} from 'react-native';
 import { Dropdown } from 'react-native-element-dropdown';
@@ -37,10 +37,14 @@ const HomeScreenView: React.FC<{}> = ({}) => {
         <Text style={styles.labelText}>Type :</Text>
         <Dropdown data={activeTab===1 ? incomeData:expenceData}
         style={styles.dropDownMenu}
+        containerStyle={{backgroundColor:'tomato'}}
+        selectedTextStyle={{color:'black'}}
+        placeholderStyle={{color:'black'}}
         labelField="label"
         valueField="value"
         placeholder='Type'
         maxHeight={120}
+        activeColor='tomato'
         onChange={item => {
             setValue(item.value);
           }}
@@ -48,7 +52,7 @@ const HomeScreenView: React.FC<{}> = ({}) => {
         </View>
         <View style={styles.fields}>
         <Text style={styles.labelText}>Amount :</Text>
-        <TextInput placeholder="Amount" keyboardType="numeric" style={styles.inputBox}/>
+        <TextInput placeholderTextColor={'black'}  placeholder="Amount" keyboardType="numeric" style={styles.inputBox}/>
         </View>
         
       </View>

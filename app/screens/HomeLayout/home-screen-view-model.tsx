@@ -1,4 +1,5 @@
 import { HomeProps } from "../../Navigation/@types/navigation-types";
+import { totalIncome } from "../../common/totalIncome";
 
 const useHomeScreenViewController = ({navigation}: HomeProps) => {
 
@@ -8,7 +9,9 @@ const useHomeScreenViewController = ({navigation}: HomeProps) => {
         }
     }
 
-    return { onPress };
+    const getTotalIncome = () => totalIncome();
+
+    return { onPress, getTotalIncome };
 }
 
 export default useHomeScreenViewController;

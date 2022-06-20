@@ -8,15 +8,16 @@ import Footer from "./Component/Footer";
 import ExpenseList from "./Component/ExpenseList";
 
 type Props = {
-    onClick: any
+    onClick: any,
+    totalIncome: any
 }
 
-const HomeScreenView: React.FC<Props> =  ({onClick}) => {
+const HomeScreenView: React.FC<Props> =  ({onClick,totalIncome}) => {    
 
     return (
         <View style={homeScreenStyle?.component}>
             <Header name="Kapil Shukla" />
-            <ChipGroup />
+            <ChipGroup income={totalIncome} />
             <ExpenseList />
             <Footer onPress={onClick} />
         </View>

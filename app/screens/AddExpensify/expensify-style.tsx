@@ -1,7 +1,10 @@
 import { StyleSheet} from "react-native";
 
 export const styles = StyleSheet.create({
-    
+    component: {
+        padding: 10,
+        flex: 1
+    },
     header:{
         flexDirection:'row',
         marginTop:10,
@@ -29,7 +32,8 @@ export const styles = StyleSheet.create({
         padding:20,
     },
     dropDownMenu:{
-        width:140
+        width:140,
+        color: "#000"
     },
     fields:{
         flexDirection:'row',
@@ -46,7 +50,7 @@ export const styles = StyleSheet.create({
     labelText:{
         fontSize:24,
         fontWeight:'400',
-        color:'black'
+        color:'#000'
     },
 
     saveButton:{
@@ -56,12 +60,14 @@ export const styles = StyleSheet.create({
         borderRadius:8,
         justifyContent:'center',
         alignItems:'center',
+        alignSelf: "flex-end"
     },
     buttonContainer:{
+        position: "relative",
         justifyContent:'flex-end',
         flexDirection:'row',
-        marginTop:120,
-        marginRight:20
+        flex: 1,
+        right: 10,
     },
     saveText:{
         color:'#fff',
@@ -85,5 +91,9 @@ export const styles = StyleSheet.create({
         color:'black',
         fontSize:18,
         fontWeight:'600'
+    },
+    errorMessage: {
+        color: "red",
+        textAlign: "center",
     }
 })

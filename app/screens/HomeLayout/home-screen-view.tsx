@@ -10,12 +10,13 @@ import ExpenseList from "./Component/ExpenseList";
 import {getExpensesList} from "../../store/entities/Income"
 
 type Props = {
-    onClick: any,
-    totalIncome: any,
-    totalExpense: any
+    onClick: () => void,
+    totalIncome: number,
+    totalExpense: number,
+    totalSaving: number
 }
 
-const HomeScreenView: React.FC<Props> =  ({onClick,totalIncome, totalExpense}) => {
+const HomeScreenView: React.FC<Props> =  ({onClick,totalIncome, totalExpense,totalSaving}) => {
     const getExpenseData = useSelector(getExpensesList);
 
     return (
@@ -23,7 +24,7 @@ const HomeScreenView: React.FC<Props> =  ({onClick,totalIncome, totalExpense}) =
             <Header name="Their" />
             <ChipGroup income={totalIncome} expense={totalExpense} />
             <ExpenseList totalExpenses={getExpenseData} />
-            <Footer onPress={onClick} income={totalIncome} expense={totalExpense} />
+            <Footer onPress={onClick} totalSaving={totalSaving} />
         </View>
     )
 }

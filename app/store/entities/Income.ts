@@ -16,15 +16,17 @@ const expensifySlice = createSlice({
     },
     addExpense: (data: ExpensifyType, action) => {
       let expenses = action.payload;
-      if(expenses){
-        const getIndex = data.expenses.findIndex(item => item.type === expenses.type);
-        if(getIndex >= 0){
-            data.expenses[getIndex].amount = data.expenses[getIndex].amount + expenses.amount
-        }else{
-            data.expenses.push(expenses);
+      if (expenses) {
+        const getIndex = data.expenses.findIndex(
+          item => item.type === expenses.type,
+        );
+        if (getIndex >= 0) {
+          data.expenses[getIndex].amount =
+            data.expenses[getIndex].amount + expenses.amount;
+        } else {
+          data.expenses.push(expenses);
         }
       }
-      
     },
     updateTotalSavings: (data: ExpensifyType, action) => {
       let {total_savings} = action.payload;
@@ -52,14 +54,32 @@ export const getIncomeList = createSelector(
   expensify => expensify.income,
 );
 
-export const getTotalSaving = createSelector(
+export const getTotalIncomeAmount = createSelector(
   (state: State) => state.entities.incomeReducer,
-  expensify => expensify.total_savings,
+  expensify => {
+    if (expensify.income?.length > 0) {
+      return expensify.income.reduce(
+        (totalIncome, eachIncome) => totalIncome + eachIncome.amount,
+        0,
+      );
+    } else {
+      return 0;
+    }
+  },
 );
 
-export const getTotalExpense = createSelector(
+export const getTotalExpenseAmount = createSelector(
   (state: State) => state.entities.incomeReducer,
-  expensify => expensify.total_expenses,
+  expensify => {
+    if (expensify.expenses?.length > 0) {
+      return expensify.expenses.reduce(
+        (totalExpenses, eachExpense) => totalExpenses + eachExpense.amount,
+        0,
+      );
+    } else {
+      return 0;
+    }
+  },
 );
 
 // action
@@ -69,5 +89,5 @@ export const updateIncome = (data: income) => (dispatch: Dispatch) => {
 };
 
 export const updateExpense = (data: income) => (dispatch: Dispatch) => {
-    return dispatch({type: addExpense.type, payload: data})
-}
+  return dispatch({type: addExpense.type, payload: data});
+};

@@ -15,8 +15,16 @@ const expensifySlice = createSlice({
       data.income.push(action.payload);
     },
     addExpense: (data: ExpensifyType, action) => {
-      let {expenses} = action.payload;
-      data.expenses.push(expenses);
+      let expenses = action.payload;
+      if(expenses){
+        const getIndex = data.expenses.findIndex(item => item.type === expenses.type);
+        if(getIndex >= 0){
+            data.expenses[getIndex].amount = data.expenses[getIndex].amount + expenses.amount
+        }else{
+            data.expenses.push(expenses);
+        }
+      }
+      
     },
     updateTotalSavings: (data: ExpensifyType, action) => {
       let {total_savings} = action.payload;
@@ -29,7 +37,7 @@ const expensifySlice = createSlice({
   },
 });
 
-const {addIncome} = expensifySlice.actions;
+const {addIncome, addExpense} = expensifySlice.actions;
 
 export default expensifySlice.reducer;
 
@@ -56,6 +64,10 @@ export const getTotalExpense = createSelector(
 
 // action
 
-export const updateUserName = (data: income) => (dispatch: Dispatch) => {
+export const updateIncome = (data: income) => (dispatch: Dispatch) => {
   return dispatch({type: addIncome.type, payload: data});
 };
+
+export const updateExpense = (data: income) => (dispatch: Dispatch) => {
+    return dispatch({type: addExpense.type, payload: data})
+}

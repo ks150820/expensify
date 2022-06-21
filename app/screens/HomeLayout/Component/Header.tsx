@@ -11,7 +11,7 @@ const Header: React.FC<Props> = ({ name }) => {
     return (
         <View style={headerStyle?.component}>
             <View>
-                <Text style={headerStyle.text}>Good Morning</Text>
+                <Text style={headerStyle.text}>Hello,</Text>
                 <Text style={[headerStyle.text, headerStyle.name]}>{name}</Text>
             </View>
             <View>

@@ -9,9 +9,9 @@ interface IHomeScreen extends HomeProps {};
 
 const HomeScreen: React.FC<IHomeScreen> = ({navigation,route}: HomeProps) => {
 
-    const { onPress, getTotalIncome} = useHomeScreenViewController({navigation, route});
+    const { onPress, getTotalIncome, getTotalExpense} = useHomeScreenViewController({navigation, route});
     return (
-        <HomeScreenView onClick={onPress} totalIncome={getTotalIncome()} />
+        <HomeScreenView onClick={onPress} totalIncome={getTotalIncome()} totalExpense={getTotalExpense()} />
     )
 }
 

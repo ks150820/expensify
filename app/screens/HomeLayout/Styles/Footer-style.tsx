@@ -25,6 +25,11 @@ export const footerStyle = StyleSheet.create({
     },
     savingComponent: {
         backgroundColor: "tomato",
+    },
+    errorComponent: {
+        backgroundColor: "#df4759",
+    },
+    commonSavingComponent: {
         padding: 10,
         justifyContent: "space-between",
         alignItems: "center",

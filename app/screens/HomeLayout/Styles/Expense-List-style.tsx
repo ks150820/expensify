@@ -17,6 +17,7 @@ export const expenseStyle = StyleSheet.create({
         marginBottom: 5
     },
     text: {
-        color: "#fff"
+        color: "#fff",
+        textTransform: "capitalize"
     }
 })

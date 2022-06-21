@@ -1,6 +1,6 @@
 interface expense {
-  category: String;
-  amount: Number;
+  type: String;
+  amount: number;
 }
 
 interface income {

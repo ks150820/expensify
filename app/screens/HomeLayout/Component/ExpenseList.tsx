@@ -14,16 +14,20 @@ const array = [{
     id: 2
 }];
 interface IItemProps {
-    categoryName: string,
+    type: string,
     amount: number,
-    id: number
 }
-const ExpenseList: React.FC<{}> = () => {
+
+type Props = {
+    totalExpenses: IItemProps[] | any
+}
+
+const ExpenseList: React.FC<Props> = ({totalExpenses}) => {
 
     const renderItem = (item: IItemProps) => {
         return (
             <View style={expenseStyle.listComponent}>
-                <Text style={expenseStyle.text}>{item.categoryName}</Text>
+                <Text style={expenseStyle.text}>{item.type}</Text>
                 <Text style={expenseStyle.text}>₹ {item.amount}</Text>
             </View>
         )
@@ -32,8 +36,8 @@ const ExpenseList: React.FC<{}> = () => {
     return (
         <View style={expenseStyle?.component}>
             <FlatList
-                keyExtractor={item => item.id + ""}
-                data={array}
+                keyExtractor={(item,index) => index+ ""}
+                data={totalExpenses}
                 renderItem={({ item }: { item: IItemProps }) => renderItem(item)}
             />
         </View>

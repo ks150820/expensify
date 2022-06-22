@@ -11,14 +11,12 @@ interface income {
 interface ExpensifyType {
   expenses: expense[];
   income: income[];
-  total_savings: Number;
-  total_expenses: Number;
 }
 
 interface incomeReducer {
-    incomeReducer: ExpensifyType
+  incomeReducer: ExpensifyType;
 }
 
 interface State {
-    entities: incomeReducer
+  entities: incomeReducer;
 }

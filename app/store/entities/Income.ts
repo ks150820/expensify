@@ -5,8 +5,6 @@ import {createSelector} from 'reselect';
 const expensifySlice = createSlice({
   name: 'expensify',
   initialState: <ExpensifyType>{
-    total_expenses: 15,
-    total_savings: 0,
     expenses: [],
     income: [],
   },
@@ -27,14 +25,6 @@ const expensifySlice = createSlice({
           data.expenses.push(expenses);
         }
       }
-    },
-    updateTotalSavings: (data: ExpensifyType, action) => {
-      let {total_savings} = action.payload;
-      data.total_savings = total_savings;
-    },
-    updateTotalExpenses: (data: ExpensifyType, action) => {
-      let {total_expenses} = action.payload;
-      data.total_expenses = total_expenses;
     },
   },
 });

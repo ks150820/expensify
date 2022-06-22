@@ -20,12 +20,14 @@ const ExpenseListScreenView: React.FC<Props> = ({totalExpenses}) => {
 
   return (
     <View style={expenseStyle?.component}>
-      <FlatList
-        keyExtractor={(__item, index) => index + ''}
-        data={totalExpenses}
-        renderItem={({item}: {item: IItemProps}) => renderItem(item)}
-        ListEmptyComponent={() => <EmptyView />}
-      />
+      {totalExpenses.length > 0 && (
+        <FlatList
+          keyExtractor={(_item, index) => index + ''}
+          data={totalExpenses}
+          renderItem={({item}: {item: IItemProps}) => renderItem(item)}
+          ListEmptyComponent={() => <EmptyView />}
+        />
+      )}
     </View>
   );
 };

@@ -12,7 +12,7 @@ const HeaderScreenView: React.FC<Props> = ({name}) => {
       </View>
       <View>
         <Image
-          source={require('../../../assets/images/avatar.png')}
+          source={require('../../../../assets/images/avatar.png')}
           style={headerStyle.image}
           resizeMode="cover"
         />

@@ -8,6 +8,10 @@ type Props = {
   totalExpenses: IItemProps[] | any;
 };
 
+/**
+ * @param totalExpenses
+ * @returns this component will show all the expenses added by the user
+ */
 const ExpenseListScreenView: React.FC<Props> = ({totalExpenses}) => {
   const renderItem = (item: IItemProps) => {
     return (

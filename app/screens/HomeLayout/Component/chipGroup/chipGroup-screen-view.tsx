@@ -4,6 +4,9 @@ import {View} from 'react-native';
 import Chip from '../Chip';
 import {chipGroupStyles} from './chip-group-styles';
 
+/**
+ * @param {income,expense} // passing total income and expense
+ */
 const ChipGroupScreenView: React.FC<ChipGroupProps> = ({income, expense}) => {
   return (
     <View style={chipGroupStyles.component}>

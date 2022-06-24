@@ -13,6 +13,11 @@ interface footerScreenViewProps {
 
 type FooterScreenViewFunc = (props: footerScreenViewProps) => JSX.Element;
 
+/**
+ * @param onPress is a method responsible for navigating into screens, when user will press the add button
+ * @param totalSaving it is total saving of user
+ * @returns this component print add button and user saving component
+ */
 const FooterScreenView: FooterScreenViewFunc = ({onPress, totalSaving}) => {
   return (
     <View style={footerStyle?.component}>

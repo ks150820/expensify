@@ -3,6 +3,9 @@ import {View, Text, Image} from 'react-native';
 
 import {headerStyle} from './home-screen-header-style';
 
+/**
+ * @param name passing the name to display in the header
+ */
 const HeaderScreenView: React.FC<Props> = ({name}) => {
   return (
     <View style={headerStyle?.component}>

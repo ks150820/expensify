@@ -1,4 +1,4 @@
-import {combineReducers, ReducersMapObject} from '@reduxjs/toolkit';
+import {combineReducers} from '@reduxjs/toolkit';
 import entitiesReducer from './entities';
 
 /**

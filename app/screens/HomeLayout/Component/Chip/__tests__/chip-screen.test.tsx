@@ -15,6 +15,6 @@ describe('chip-screen', () => {
 
     const element = getByText('expense');
 
-    expect(() => element).not.toThrow();
+    expect(element.props.children).toBe('expense');
   });
 });

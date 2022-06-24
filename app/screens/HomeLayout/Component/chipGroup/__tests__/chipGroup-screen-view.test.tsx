@@ -10,7 +10,7 @@ describe('chipGroup-screen-view', () => {
     };
     const {getByText} = render(<ChipGroupScreenView {...props} />);
 
-    expect(() => getByText('income')).not.toThrow();
-    expect(() => getByText('expense')).not.toThrow();
+    expect(getByText('income').props.children).toBe('income');
+    expect(getByText('expense').props.children).toBe('expense');
   });
 });

@@ -6,6 +6,6 @@ describe('header-screen', () => {
   test('test header component', () => {
     const {getByText} = render(<HeaderScreen name="Their" />);
 
-    expect(getByText('Their'));
+    expect(getByText('Their').props.children).toBe('Their');
   });
 });

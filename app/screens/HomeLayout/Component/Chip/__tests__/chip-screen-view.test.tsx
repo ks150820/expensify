@@ -13,6 +13,6 @@ describe('chip-screen-view', () => {
     };
     const {getByText} = render(<ChipScreenView {...props} />);
 
-    expect(() => getByText('income', {exact: true})).not.toThrow();
+    expect(getByText('income').props.children).toBe('income');
   });
 });

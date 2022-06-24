@@ -7,6 +7,10 @@ import {
   getExpensesList,
 } from '../../store/entities/Income';
 
+/**
+ * @param navigation responsible for navigation
+ * @description model view is use for functionality part like wrote logic here, it handle totalExpenses, totalIncome, totalSaving and onPress Method for navigation into the screens
+ */
 const useHomeScreenViewController = ({navigation}: HomeProps) => {
   const totalIncome = useSelector(getTotalIncomeAmount);
   const totalExpense = useSelector(getTotalExpenseAmount);

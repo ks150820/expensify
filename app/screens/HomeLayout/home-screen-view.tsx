@@ -16,6 +16,15 @@ interface Props {
   expenseList: any;
 }
 
+/**
+ *
+ * @param onClick this method is responsible for navigating to another screen
+ * @param totalIncome this is total income
+ * @param totalExpense user total expense amount
+ * @param totalSaving its getting total saving means totalIncome - totalExpense
+ * @param expenseList array of objects of user expenses
+ * @returns ui
+ */
 const HomeScreenView: React.FC<Props> = ({
   onClick,
   totalIncome,

@@ -1,6 +1,6 @@
 import React from 'react';
-import {render} from '../../../testing/test-utils';
-import HomeScreenView from './home-screen-view';
+import {render} from '../../../../testing/test-utils';
+import HomeScreenView from '../home-screen-view';
 
 describe('home-screen-view', () => {
   test('should ', () => {

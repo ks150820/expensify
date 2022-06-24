@@ -12,7 +12,7 @@ interface uibuttonprops {
 
 const UIButtonScreenView: React.FC<uibuttonprops> = ({onPress}) => {
   return (
-    <Pressable onPress={onPress}>
+    <Pressable onPress={onPress} testID="onPressButton">
       <View style={styles?.buttonComponent}>
         <Icon name="add" style={styles?.icon} />
       </View>

@@ -6,5 +6,8 @@ module.exports = {
         https://jestjs.io/docs/configuration#transform-objectstring-pathtotransformer--pathtotransformer-object */
     '^.+\\.(js|jsx|ts|tsx)$': ['babel-jest'],
   },
+  transformIgnorePatterns: [
+    '<rootDir>node_modules/(?!(react-native|react-native-vector-icons)/)',
+  ],
   testMatch: ['**/__tests__/**/*.ts?(x)', '**/?(*.)+(test).ts?(x)'],
 };

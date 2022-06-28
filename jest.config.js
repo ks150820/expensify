@@ -10,4 +10,8 @@ module.exports = {
     '<rootDir>node_modules/(?!(react-native|react-native-vector-icons)/)',
   ],
   testMatch: ['**/__tests__/**/*.ts?(x)', '**/?(*.)+(test).ts?(x)'],
+  testPathIgnorePatterns: [
+    '<rootDir>/node_modules/',
+    '<rootDir>/testing/test-utils.tsx',
+  ],
 };

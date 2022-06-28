@@ -1,8 +1,8 @@
 import React from 'react';
 import {FlatList, View, Text} from 'react-native';
+import EmptyView from './emptyView-screen';
 
 import {expenseStyle} from './Expense-List-style';
-import EmptyView from './emptyView-screen';
 
 type Props = {
   totalExpenses: IItemProps[] | any;
@@ -24,12 +24,14 @@ const ExpenseListScreenView: React.FC<Props> = ({totalExpenses}) => {
 
   return (
     <View style={expenseStyle?.component}>
-      {totalExpenses.length > 0 && (
+      {totalExpenses.length == 0 ? (
+        <EmptyView />
+      ) : (
         <FlatList
           keyExtractor={(_item, index) => index + ''}
+          testID={'flat-list'}
           data={totalExpenses}
           renderItem={({item}: {item: IItemProps}) => renderItem(item)}
-          ListEmptyComponent={() => <EmptyView />}
         />
       )}
     </View>

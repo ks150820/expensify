@@ -14,17 +14,17 @@ const expensifySlice = createSlice({
     },
     addExpense: (data: ExpensifyType, action) => {
       let expenses = action.payload;
-      if (expenses) {
-        const getIndex = data.expenses.findIndex(
-          item => item.type === expenses.type,
-        );
-        if (getIndex >= 0) {
-          data.expenses[getIndex].amount =
-            data.expenses[getIndex].amount + expenses.amount;
-        } else {
-          data.expenses.push(expenses);
-        }
+      // if (expenses) {
+      const getIndex = data.expenses.findIndex(
+        item => item.type === expenses.type,
+      );
+      if (getIndex >= 0) {
+        data.expenses[getIndex].amount =
+          data.expenses[getIndex].amount + expenses.amount;
+      } else {
+        data.expenses.push(expenses);
       }
+      // }
     },
   },
 });

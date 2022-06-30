@@ -13,5 +13,6 @@ module.exports = {
   testPathIgnorePatterns: [
     '<rootDir>/node_modules/',
     '<rootDir>/testing/test-utils.tsx',
+    '<rootDir>/app/screens/HomeLayout/index.tsx',
   ],
 };
